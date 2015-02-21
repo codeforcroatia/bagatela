@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Grad Zagreb",
+        "url": "http://www.zagreb.hr",
+        "procurementPageUrl": "http://www.zagreb.hr/default.aspx?id=23749",
+        "selectors": {
+            "title": ".newsTitle a strong::text",
+            "url": ".newsTitle a::attr(href)",
+            "publishDate": ".newsDate"
+        }
+    },
+    {
+        "name": "Hrvatske autoceste održavanje i naplata cestarine d.o.o.",
+        "url": "http://hac-onc.hr",
+        "procurementPageUrl": "http://hac-onc.hr/hr/javna-nabava/bagatelna-nabava",
+        "selectors": {
+            "title": ".pp-title",
+            "publishDate": ".datum",
+            "closureDate": ".opis::text"
+        }
+    }
+]
