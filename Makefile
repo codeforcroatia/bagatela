@@ -1,6 +1,10 @@
+IMAGE = codeacross-bagatela
 RUN_ARGS = -it --rm=true --volume "$$(pwd):/app"
 
-.PHONY: development
+.PHONY: development build
 
 development:
-	@sudo docker run $(RUN_ARGS) google/python bin/bash
+	@sudo docker run $(RUN_ARGS) $(IMAGE) /bin/bash
+
+build:
+	@sudo docker build --tag=$(IMAGE) .
