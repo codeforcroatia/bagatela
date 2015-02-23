@@ -17,10 +17,9 @@ class ProcurementSpider(scrapy.Spider):
             for procurer in self.procurers)
 
     def parse(self, response):
-        selectors = self.procurement_page_index[response.url].data['selectors']
+        procurer = self.procurement_page_index[response.url].data
+        selectors = procurer['selectors']
 
-        pprint.pprint(selectors)
-        results = [Procurement(title=e.extract()) for e in response.css(selectors['title'])]
-        pprint.pprint(results)
+        results = [Procurement(procurer, title=e.extract()) for e in response.css(selectors['title'])]
 
         return results
