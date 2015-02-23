@@ -1,9 +1,9 @@
 IMAGE = codeacross-bagatela
 RUN_ARGS = -it --rm=true --volume "$$(pwd):/app"
 
-.PHONY: development build
+.PHONY: shell crawl build
 
-development:
+shell:
 	@sudo docker run $(RUN_ARGS) $(IMAGE) /bin/bash
 
 crawl:
