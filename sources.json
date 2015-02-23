@@ -6,7 +6,7 @@
         "selectors": {
             "title": ".newsTitle a strong::text",
             "url": ".newsTitle a::attr(href)",
-            "publishDate": ".newsDate"
+            "publish_date": ".newsDate::text"
         }
     },
     {
@@ -15,8 +15,8 @@
         "procurementPageUrl": "http://hac-onc.hr/hr/javna-nabava/bagatelna-nabava",
         "selectors": {
             "title": ".pp-title::text",
-            "publishDate": ".datum",
-            "closureDate": ".opis::text"
+            "publish_date": ".datum::text",
+            "closure_date": ".opis::text"
         }
     }
 ]

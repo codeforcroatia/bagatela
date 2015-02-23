@@ -5,8 +5,8 @@ class Procurement(Item):
     procurer = Field()
     title = Field()
     url = Field()
-    published_date = Field()
-    closing_date = Field()
+    publish_date = Field()
+    closure_date = Field()
 
     def __init__(self, procurer, *args, **kwargs):
         super(Procurement, self).__init__(procurer=procurer, **kwargs)
