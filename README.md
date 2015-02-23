@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/codeforcroatia/bagatela.png?label=ready&title=Ready)](https://waffle.io/codeforcroatia/bagatela)
 # bagatela
 
 Registry and scraper for public procurements.
