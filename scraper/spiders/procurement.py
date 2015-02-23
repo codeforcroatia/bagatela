@@ -1,5 +1,6 @@
+import itertools
+import operator
 import scrapy
-import pprint
 
 from bagatela.models import get_procurers
 from scraper.items import Procurement
@@ -20,6 +21,7 @@ class ProcurementSpider(scrapy.Spider):
         procurer = self.procurement_page_index[response.url].data
         selectors = procurer['selectors']
 
-        results = [Procurement(procurer, title=e.extract()) for e in response.css(selectors['title'])]
+        data = (map(operator.methodcaller('strip'), response.css(selectors[k]).extract()) for k, v in selectors.iteritems())
+        keys = procurer['selectors'].keys()
 
-        return results
+        return map(lambda d: Procurement(procurer, **dict(zip(keys, d))), itertools.izip(*data));
