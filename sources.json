@@ -14,7 +14,7 @@
         "url": "http://hac-onc.hr",
         "procurementPageUrl": "http://hac-onc.hr/hr/javna-nabava/bagatelna-nabava",
         "selectors": {
-            "title": ".pp-title",
+            "title": ".pp-title::text",
             "publishDate": ".datum",
             "closureDate": ".opis::text"
         }
